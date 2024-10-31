@@ -39,7 +39,7 @@ eureka:
     enabled: false  # 로컬 환경에서 Eureka 클라이언트 비활성화
 
 server:
-  port: 7000
+  port: 9500
 
 logging:
   level:
