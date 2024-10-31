@@ -33,6 +33,11 @@ public class DashboardController {
         return "dashboard"; // 대시보드 템플릿
     }
 
+    @PostMapping("/user/ban/{userId}")
+    public String banUser(@PathVariable Long userId){
+        userServiceClient.banUser(userId);
+        return "redirect:/dashboard";
+    }
 
     @GetMapping("/character-inventory")
     public String characterInventory(Model model){

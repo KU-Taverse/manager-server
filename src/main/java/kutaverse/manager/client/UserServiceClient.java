@@ -18,7 +18,8 @@ public interface UserServiceClient {
     ResponseEntity<List<GetUsersResponse>> getUsersList();
 
     // 유저 정지 또는 해제
-
+    @PostMapping("/user/ban/{userId}")
+    ResponseEntity<String> banUser(@PathVariable Long userId);
 
     // 캐릭터 정보 가져오기(위의 유저 ID를 기준으로)
 }
