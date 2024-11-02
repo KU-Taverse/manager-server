@@ -52,11 +52,4 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/dashboard")
-    public String dashboard() {
-//        List<UserDto> users = userServiceClient.getAllUsers();
-//        model.addAttribute("users", users);
-        return "dashboard"; // 대시보드 템플릿
-    }
-
 }
