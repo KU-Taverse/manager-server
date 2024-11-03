@@ -44,7 +44,7 @@ public class AdminController {
             cookie.setPath("/"); // 전체 경로에서 접근 가능
             cookie.setMaxAge(60 * 60); // 쿠키 유효 기간 (1시간)
             response.addCookie(cookie);
-            return "redirect:/dashboard"; // 대시보드 페이지로 리다이렉트
+            return "redirect:https://kutavers.xyz/manager-service/dashboard";  // 대시보드 페이지로 리다이렉트
 
         }catch (Exception e){
             model.addAttribute("error", "로그인 중 오류가 발생했습니다.");

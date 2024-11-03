@@ -1,6 +1,7 @@
 package kutaverse.manager.client;
 
 import kutaverse.manager.domain.login.dto.request.LoginRequest;
+import kutaverse.manager.domain.login.dto.response.FindAllCharactersResponse;
 import kutaverse.manager.domain.login.dto.response.GetUsersResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -22,4 +23,6 @@ public interface UserServiceClient {
     ResponseEntity<String> banUser(@PathVariable Long userId);
 
     // 캐릭터 정보 가져오기(위의 유저 ID를 기준으로)
+    @GetMapping("/characterList")
+    ResponseEntity<List<FindAllCharactersResponse>> getCharacters();
 }
