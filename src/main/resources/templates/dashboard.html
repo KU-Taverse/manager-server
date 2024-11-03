@@ -13,16 +13,15 @@
             <h1>쿠 관리자 페이지</h1>
         </div>
         <ul class="menu">
-            <li><a href="/dashboard">대시보드</a></li>
-            <li><a href="/dashboard" class="active">유저 관리</a></li>
-            <li><a href="/character-inventory">캐릭터 및 인벤토리 관리</a></li>
-            <li><a href="/admin/chat-management">채팅 관리</a></li>
-            <li><a href="/admin/game-records">게임 기록 조회</a></li>
-            <li><a href="/admin/settings">환경 설정</a></li>
+            <li><a href="/manager-service/dashboard">대시보드</a></li>
+            <li><a href="/manager-service/dashboard" class="active">유저 관리</a></li>
+            <li><a href="/manager-service/character-inventory">캐릭터 및 인벤토리 관리</a></li>
+            <li><a href="/manager-service/admin/chat-management">채팅 관리</a></li>
+            <li><a href="/manager-service/admin/game-records">게임 기록 조회</a></li>
+            <li><a href="/manager-service/admin/settings">환경 설정</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <div class="main-content">
         <header>
             <h2>유저 관리</h2>
@@ -50,7 +49,7 @@
                     <td th:text="${user.role}"></td>
                     <td th:text="${user.accountStatus == 'RUN' ? '정상' : '정지'}"></td>
                     <td>
-                        <form action="#" th:action="@{/user/ban/{userId}(userId=${user.userId})}" method="post" style="display:inline;">
+                        <form action="#" th:action="@{/manager-serivce/user/ban/{userId}(userId=${user.userId})}" method="post" style="display:inline;">
                             <button type="submit" class="btn"
                                     th:text="${user.accountStatus == 'STOP' ? '해제' : '정지'}"></button>
                         </form>
