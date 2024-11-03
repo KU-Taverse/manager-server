@@ -37,7 +37,7 @@ public class DashboardController {
     @PostMapping("/user/ban/{userId}")
     public String banUser(@PathVariable Long userId){
         userServiceClient.banUser(userId);
-        return "redirect:https://kutavers.xyz/manager-service/dashboard";
+        return "redirect:https://kutaverse.xyz/manager-service/dashboard";
     }
 
     @GetMapping("/character-inventory")
