@@ -1,6 +1,7 @@
 package kutaverse.manager.domain.login;
 
 import kutaverse.manager.client.UserServiceClient;
+import kutaverse.manager.domain.login.dto.response.FindAllCharactersResponse;
 import kutaverse.manager.domain.login.dto.response.GetUsersResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +42,17 @@ public class DashboardController {
 
     @GetMapping("/character-inventory")
     public String characterInventory(Model model){
+        try{
+            ResponseEntity<List<FindAllCharactersResponse>> response = userServiceClient.getCharacters(); // 사용자를 리스트로 받아오는 메서드 호출
+            List<FindAllCharactersResponse> characterList = response.getBody();
 
+            // 받은 사용자 목록을 모델에 추가
+            if (characterList != null) {
+                model.addAttribute("characterList", characterList);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return "character-inventory";
     }
 }
